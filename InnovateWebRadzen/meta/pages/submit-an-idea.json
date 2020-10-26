@@ -1,0 +1,488 @@
+{
+  "access": [],
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "name": "pageTitle",
+                      "size": "H1",
+                      "text": "Submit An Idea",
+                      "type": "heading"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "firstName",
+                              "name": "firstNameLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "First Name",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 16777215,
+                              "name": "firstName",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${idea.firstName}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "firstName",
+                              "name": "firstNameRequiredValidator",
+                              "popup": false,
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "firstName is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "lastName",
+                              "name": "lastNameLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Last Name",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 16777215,
+                              "name": "lastName",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${idea.lastName}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "lastName",
+                              "name": "lastNameRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "lastName is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "email",
+                              "name": "emailLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Email",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 16777215,
+                              "name": "email",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${idea.email}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "email",
+                              "name": "emailValidator0",
+                              "popup": true,
+                              "style": {
+                                "display": "block",
+                                "float": "none",
+                                "fontWeight": "bold",
+                                "position": "absolute",
+                                "verticalAlign": "baseline",
+                                "zIndex": "100"
+                              },
+                              "type": "email-validator",
+                              "visible": true
+                            },
+                            {
+                              "component": "email",
+                              "name": "emailRequiredValidator",
+                              "popup": false,
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "email is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "business",
+                              "name": "businessLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Business",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 16777215,
+                              "name": "business",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${idea.business}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "business",
+                              "name": "businessRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "business is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "office",
+                              "name": "officeLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Office",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 16777215,
+                              "name": "office",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${idea.office}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "office",
+                              "name": "officeRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "office is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "ideaDescription",
+                              "name": "ideaDescriptionLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Idea Description",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 16777215,
+                              "name": "ideaDescription",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${idea.ideaDescription}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "ideaDescription",
+                              "name": "ideaDescriptionRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "ideaDescription is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "scope",
+                              "name": "scopeLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Scope",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "maxLength": 16777215,
+                              "name": "scope",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "textbox",
+                              "value": "${idea.scope}",
+                              "valueType": "string"
+                            },
+                            {
+                              "component": "scope",
+                              "name": "scopeRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "scope is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "buttonStyle": "primary",
+                              "buttonType": "submit",
+                              "events": {
+                                "click": [
+                                  {
+                                    "detail": "Your idea has been recorded",
+                                    "severity": "success",
+                                    "summary": "Success",
+                                    "then": [
+                                      {
+                                        "path": "welcome",
+                                        "type": "navigate"
+                                      }
+                                    ],
+                                    "type": "notify"
+                                  }
+                                ]
+                              },
+                              "icon": "save",
+                              "text": "Save",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "buttonType": "button",
+                              "events": {
+                                "click": [
+                                  {
+                                    "path": "welcome",
+                                    "type": "navigate"
+                                  }
+                                ]
+                              },
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "type": "button"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "type": "row"
+                    }
+                  ],
+                  "data": "${idea}",
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new Idea!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "Innovate DB.createIdea",
+                        "parameters": [
+                          {
+                            "name": "Idea",
+                            "value": "${idea}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "result": "${idea}",
+                            "type": "close-popup"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "InnovationWebApp.Models.InnovateDb.Idea",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${idea != null}"
+                }
+              ],
+              "type": "col"
+            }
+          ],
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "idea",
+        "type": "set",
+        "value": "new InnovationWebApp.Models.InnovateDb.Idea(){}",
+        "valueType": "InnovationWebApp.Models.InnovateDb.Idea"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Submit An Idea"
+}

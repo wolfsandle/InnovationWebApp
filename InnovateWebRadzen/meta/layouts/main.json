@@ -1,0 +1,126 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "class": "justify-content-start align-items-center",
+          "components": [
+            {
+              "class": "col-md-6 d-flex align-items-center",
+              "components": [
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "code": "await InvokeAsync(() => { sidebar0.Toggle(); });",
+                        "type": "execute"
+                      },
+                      {
+                        "code": "await InvokeAsync(() => { body0.Toggle(); });",
+                        "type": "execute"
+                      }
+                    ]
+                  },
+                  "name": "sidebar-toggle0",
+                  "type": "sidebar-toggle"
+                },
+                {
+                  "name": "image0",
+                  "path": "/assets/images/ledcor.png",
+                  "style": {
+                    "float": "none",
+                    "textAlign": "right",
+                    "verticalAlign": "middle",
+                    "width": "50px"
+                  },
+                  "type": "image"
+                },
+                {
+                  "name": "label0",
+                  "style": {
+                    "fontSize": "24px",
+                    "fontStyle": "oblique",
+                    "fontWeight": "bold",
+                    "paddingLeft": "17px"
+                  },
+                  "text": "Innovation Web App",
+                  "type": "label"
+                }
+              ],
+              "name": "leftCol",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6 text-lg-right",
+              "components": [],
+              "name": "rightCol",
+              "type": "col"
+            }
+          ],
+          "name": "headerRow",
+          "type": "row"
+        }
+      ],
+      "name": "header0",
+      "type": "header"
+    },
+    {
+      "components": [
+        {
+          "name": "main",
+          "type": "content-container"
+        }
+      ],
+      "name": "body0",
+      "type": "body"
+    },
+    {
+      "components": [
+        {
+          "items": [
+            {
+              "icon": "language",
+              "path": "welcome",
+              "text": "Welcome"
+            },
+            {
+              "icon": "build",
+              "path": "submit-an-idea",
+              "text": "Submit An Idea"
+            },
+            {
+              "icon": "zoom_in",
+              "path": "review-ideas",
+              "text": "Review Ideas"
+            },
+            {
+              "icon": "thumb_up",
+              "path": "vote-for-ideas",
+              "text": "Vote For Ideas"
+            }
+          ],
+          "name": "panelmenu0",
+          "style": {
+            "height": "100%"
+          },
+          "type": "panelmenu"
+        }
+      ],
+      "name": "sidebar0",
+      "type": "sidebar"
+    },
+    {
+      "components": [
+        {
+          "name": "footerText",
+          "text": "CW, Copyright Ⓒ 2020",
+          "type": "label",
+          "visible": true
+        }
+      ],
+      "name": "footer0",
+      "type": "footer"
+    }
+  ],
+  "name": "Main"
+}

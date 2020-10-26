@@ -1,0 +1,32 @@
+{
+  "access": [],
+  "components": [
+    {
+      "components": [
+        {
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Welcome",
+          "type": "heading"
+        },
+        {
+          "name": "welcomeImage",
+          "path": "/assets/images/Ledcor_Project_Intro.jpg",
+          "style": {
+            "width": "100%"
+          },
+          "type": "image"
+        },
+        {
+          "components": [],
+          "name": "row0",
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "layout": "Main",
+  "name": "Welcome"
+}

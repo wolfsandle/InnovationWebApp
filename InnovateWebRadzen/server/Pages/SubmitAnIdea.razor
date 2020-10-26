@@ -1,0 +1,115 @@
+﻿@page "/submit-an-idea"
+@layout MainLayout
+@inherits InnovationWebApp.Pages.SubmitAnIdeaComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using InnovationWebApp.Models.InnovateDb
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@idea" TItem="InnovationWebApp.Models.InnovateDb.Idea" Visible="@(idea != null)" Submit="@Form0Submit">
+          <ChildContent>
+            <RadzenHeading Size="H1" Text="Submit An Idea">
+            </RadzenHeading>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="firstName" style="width: 100%" Text="First Name">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="16777215" style="display: block; width: 100%" @bind-Value="@(idea.firstName)" Name="FirstName">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="FirstName" Popup="false" style="position: absolute" Text="firstName is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="lastName" style="width: 100%" Text="Last Name">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="16777215" style="display: block; width: 100%" @bind-Value="@(idea.lastName)" Name="LastName">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="LastName" style="position: absolute" Text="lastName is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="email" style="width: 100%" Text="Email">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="16777215" style="display: block; width: 100%" @bind-Value="@(idea.email)" Name="Email">
+                </RadzenTextBox>
+                <RadzenEmailValidator Component="Email" Popup="true" style="display: block; float: none; font-weight: bold; position: absolute; vertical-align: baseline; z-index: 100">
+                </RadzenEmailValidator>
+                <RadzenRequiredValidator Component="Email" Popup="false" style="position: absolute" Text="email is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="business" style="width: 100%" Text="Business">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="16777215" style="display: block; width: 100%" @bind-Value="@(idea.business)" Name="Business">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Business" style="position: absolute" Text="business is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="office" style="width: 100%" Text="Office">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="16777215" style="display: block; width: 100%" @bind-Value="@(idea.office)" Name="Office">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Office" style="position: absolute" Text="office is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="ideaDescription" style="width: 100%" Text="Idea Description">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="16777215" style="display: block; width: 100%" @bind-Value="@(idea.ideaDescription)" Name="IdeaDescription">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="IdeaDescription" style="position: absolute" Text="ideaDescription is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div style="margin-bottom: 1rem" class="row">
+              <div class="col-md-3">
+                <RadzenLabel Component="scope" style="width: 100%" Text="Scope">
+                </RadzenLabel>
+              </div>
+              <div class="col-md-9">
+                <RadzenTextBox MaxLength="16777215" style="display: block; width: 100%" @bind-Value="@(idea.scope)" Name="Scope">
+                </RadzenTextBox>
+                <RadzenRequiredValidator Component="Scope" style="position: absolute" Text="scope is required">
+                </RadzenRequiredValidator>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save" Click="@Button1Click">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" style="margin-left: 1rem" Text="Cancel" Click="@Button2Click">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

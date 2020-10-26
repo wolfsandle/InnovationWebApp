@@ -1,0 +1,55 @@
+﻿@inherits InnovationWebApp.Layouts.MainLayoutComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using InnovationWebApp.Models.InnovateDb
+<RadzenDialog />
+<RadzenNotification />
+<RadzenTooltip />
+<RadzenContextMenu />
+
+<RadzenHeader>
+  <ChildContent>
+    <div class="row justify-content-start align-items-center">
+      <div class="col-md-6 d-flex align-items-center">
+        <RadzenSidebarToggle Click="@SidebarToggle0Click">
+        </RadzenSidebarToggle>
+        <RadzenImage Path="assets/images/ledcor.png" style="float: none; text-align: right; vertical-align: middle; width: 50px">
+        </RadzenImage>
+        <RadzenLabel style="font-size: 24px; font-style: oblique; font-weight: bold; padding-left: 17px" Text="Innovation Web App">
+        </RadzenLabel>
+      </div>
+      <div class="col-md-6 text-lg-right">
+      </div>
+    </div>
+  </ChildContent>
+</RadzenHeader>
+<RadzenBody @ref="body0">
+  <ChildContent>
+    <RadzenContentContainer Name="main">
+    @Body
+    </RadzenContentContainer>
+  </ChildContent>
+</RadzenBody>
+<RadzenSidebar @ref="sidebar0">
+  <ChildContent>
+    <RadzenPanelMenu style="height: 100%">
+      <ChildContent>
+        <RadzenPanelMenuItem Icon="language" Path="welcome" Text="Welcome">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Icon="build" Path="submit-an-idea" Text="Submit An Idea">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Icon="zoom_in" Path="review-ideas" Text="Review Ideas">
+        </RadzenPanelMenuItem>
+        <RadzenPanelMenuItem Icon="thumb_up" Path="vote-for-ideas" Text="Vote For Ideas">
+        </RadzenPanelMenuItem>
+      </ChildContent>
+    </RadzenPanelMenu>
+  </ChildContent>
+</RadzenSidebar>
+<RadzenFooter>
+  <ChildContent>
+    <RadzenLabel Text="CW, Copyright Ⓒ 2020">
+    </RadzenLabel>
+  </ChildContent>
+</RadzenFooter>
