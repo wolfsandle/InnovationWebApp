@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "signalr1": {
+      "restored": true,
+      "restoreTime": "2020-10-25T17:34:06.7291269Z"
+    },
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2020-10-25T17:33:53.5650662Z"
+    },
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2020-10-25T17:25:58.2760355Z"
+    }
+  },
+  "parameters": {
+    "signalr1.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "Face"
+    },
+    "signalr1.subscriptionId": {
+      "Type": "subscription",
+      "Value": "1d9cfd7e-eca9-4048-9002-ed4459515a4c"
+    }
+  }
+}
