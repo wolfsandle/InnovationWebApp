@@ -37,12 +37,6 @@
                 </RadzenGridColumn>
                 <RadzenGridColumn TItem="InnovationWebApp.Models.InnovateDb.Idea" Property="votes" Title="Votes">
                 </RadzenGridColumn>
-                <RadzenGridColumn TItem="InnovationWebApp.Models.InnovateDb.Idea" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="70px">
-                  <Template Context="innovationWebAppModelsInnovateDbIdea">
-                    <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, innovationWebAppModelsInnovateDbIdea))" @onclick:stopPropagation="true">
-                    </RadzenButton>
-                  </Template>
-                </RadzenGridColumn>
               </Columns>
             </RadzenGrid>
           </ChildContent>
@@ -161,7 +155,7 @@
                     </div>
                     <div class="row">
                       <div class="col offset-sm-3">
-                        <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Button" Icon="thumb_up" style="background-color: #1cae19" Text="Vote">
+                        <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Button" Icon="thumb_up" style="background-color: #1cae19" Text="Vote" Click="@Button1Click">
                         </RadzenButton>
                         <RadzenButton ButtonStyle="ButtonStyle.Light" ButtonType="ButtonType.Button" style="margin-left: 1rem" Text="Back" Click="@Button2Click">
                         </RadzenButton>

@@ -205,5 +205,20 @@ namespace InnovationWebApp.Pages
         {
             UriHelper.NavigateTo("welcome");
         }
+
+        protected async System.Threading.Tasks.Task Button1Click(MouseEventArgs args)
+        {
+            try
+            {
+                var innovateDbCreateIdeaResult = await InnovateDb.CreateIdea(idea);
+                NotificationService.Notify(NotificationSeverity.Success, $"Success", $"Your vote has been recorded");
+                DialogService.Close(idea);
+                UriHelper.NavigateTo("welcome");
+            }
+            catch (System.Exception innovateDbCreateIdeaException)
+            {
+                NotificationService.Notify(NotificationSeverity.Error, $"Error", $"Unable to add your vote!");
+            }
+        }
     }
 }

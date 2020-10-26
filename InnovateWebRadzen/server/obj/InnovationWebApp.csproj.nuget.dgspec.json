@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cwolfsandle\\source\\repos\\InnovateWebRadzen\\server\\InnovationWebApp.csproj": {}
+    "C:\\Users\\cwolfsandle\\source\\repos\\InnovationWebApp\\InnovateWebRadzen\\server\\InnovationWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cwolfsandle\\source\\repos\\InnovateWebRadzen\\server\\InnovationWebApp.csproj": {
+    "C:\\Users\\cwolfsandle\\source\\repos\\InnovationWebApp\\InnovateWebRadzen\\server\\InnovationWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cwolfsandle\\source\\repos\\InnovateWebRadzen\\server\\InnovationWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\cwolfsandle\\source\\repos\\InnovationWebApp\\InnovateWebRadzen\\server\\InnovationWebApp.csproj",
         "projectName": "InnovationWebApp",
-        "projectPath": "C:\\Users\\cwolfsandle\\source\\repos\\InnovateWebRadzen\\server\\InnovationWebApp.csproj",
+        "projectPath": "C:\\Users\\cwolfsandle\\source\\repos\\InnovationWebApp\\InnovateWebRadzen\\server\\InnovationWebApp.csproj",
         "packagesPath": "C:\\Users\\cwolfsandle\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cwolfsandle\\source\\repos\\InnovateWebRadzen\\server\\obj\\",
+        "outputPath": "C:\\Users\\cwolfsandle\\source\\repos\\InnovationWebApp\\InnovateWebRadzen\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cwolfsandle\\AppData\\Roaming\\NuGet\\NuGet.Config",

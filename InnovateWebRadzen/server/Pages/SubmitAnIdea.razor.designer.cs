@@ -75,12 +75,14 @@ namespace InnovationWebApp.Pages
             idea = new InnovationWebApp.Models.InnovateDb.Idea(){};
         }
 
-        protected async System.Threading.Tasks.Task Form0Submit(InnovationWebApp.Models.InnovateDb.Idea args)
+        protected async System.Threading.Tasks.Task IdeaSubmit(InnovationWebApp.Models.InnovateDb.Idea args)
         {
             try
             {
                 var innovateDbCreateIdeaResult = await InnovateDb.CreateIdea(idea);
+                NotificationService.Notify(NotificationSeverity.Success, $"Success", $"Your idea has been recorded");
                 DialogService.Close(idea);
+                UriHelper.NavigateTo("welcome");
             }
             catch (System.Exception innovateDbCreateIdeaException)
             {
@@ -90,8 +92,8 @@ namespace InnovationWebApp.Pages
 
         protected async System.Threading.Tasks.Task Button1Click(MouseEventArgs args)
         {
-                NotificationService.Notify(NotificationSeverity.Success, $"Success", $"Your idea has been recorded");
-            UriHelper.NavigateTo("welcome");
+            
+           
         }
 
         protected async System.Threading.Tasks.Task Button2Click(MouseEventArgs args)
