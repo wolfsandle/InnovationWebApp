@@ -1,0 +1,443 @@
+{
+  "info": {
+    "title": "Innovate DB",
+    "x-type": "odata",
+    "x-connector": "mysql"
+  },
+  "definitions": {
+    "Idea": {
+      "x-table": "def.idea",
+      "resource": "Ideas",
+      "required": [
+        "firstName",
+        "lastName",
+        "email",
+        "business",
+        "office",
+        "ideaDescription",
+        "scope"
+      ],
+      "properties": {
+        "id": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "firstName": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 16777215
+        },
+        "lastName": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 16777215
+        },
+        "email": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 16777215
+        },
+        "business": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 16777215
+        },
+        "office": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 16777215
+        },
+        "ideaDescription": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 16777215
+        },
+        "scope": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 16777215
+        },
+        "date": {
+          "x-default-sql": "CURRENT_TIMESTAMP",
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time"
+        },
+        "votes": {
+          "x-default-sql": "0",
+          "type": "integer"
+        }
+      }
+    },
+    "Vote": {
+      "x-table": "def.votes",
+      "resource": "Votes",
+      "required": [
+        "email",
+        "id"
+      ],
+      "properties": {
+        "voteid": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "type": "integer"
+        },
+        "email": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 16777215
+        },
+        "id": {
+          "x-nullable": false,
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/Ideas": {
+      "get": {
+        "operationId": "getIdeas",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Idea"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createIdea",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Idea",
+            "schema": {
+              "$ref": "#/definitions/Idea"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Idea"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Votes": {
+      "get": {
+        "operationId": "getVotes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Vote"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVote",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Vote",
+            "schema": {
+              "$ref": "#/definitions/Vote"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Vote"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Ideas({id})": {
+      "delete": {
+        "operationId": "deleteIdea",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getIdeaByid",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Idea"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateIdea",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Idea",
+            "schema": {
+              "$ref": "#/definitions/Idea"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelIdeaChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Idea",
+            "schema": {
+              "$ref": "#/definitions/Idea"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Votes({voteid})": {
+      "delete": {
+        "operationId": "deleteVote",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "voteid",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getVoteByvoteid",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "voteid",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Vote"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVote",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "voteid",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Vote",
+            "schema": {
+              "$ref": "#/definitions/Vote"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelVoteChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Vote",
+            "schema": {
+              "$ref": "#/definitions/Vote"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "basePath": "/odata/InnovateDb",
+  "host": "localhost:5000",
+  "schemes": [
+    "http"
+  ]
+}
