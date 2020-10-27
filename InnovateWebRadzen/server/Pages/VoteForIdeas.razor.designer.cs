@@ -210,10 +210,23 @@ namespace InnovationWebApp.Pages
         {
             try
             {
-                var innovateDbCreateIdeaResult = await InnovateDb.CreateIdea(idea);
-                NotificationService.Notify(NotificationSeverity.Success, $"Success", $"Your vote has been recorded");
-                DialogService.Close(idea);
-                UriHelper.NavigateTo("welcome");
+                int selectedId = idea.id;
+                var innovateDbGetVoteResult = await InnovateDb.GetVotes(new Query() { Filter = "i => i.email.Equals(@0) && i.id.Equals(@1)", FilterParameters = new object[] { "wolfsandle@gmail.com", idea.id } });
+                if (!innovateDbGetVoteResult.Any())
+                {
+                    Vote vote = new Vote();
+                    vote.email = "wolfsandle@gmail.com";
+                    vote.id = idea.id;
+                    var innovateDbCreateVoteResult = await InnovateDb.CreateVote(vote);
+                    idea.votes += 1;
+                    await InnovateDb.UpdateIdea(idea.id, idea);
+                    NotificationService.Notify(NotificationSeverity.Success, $"Success", $"Your vote has been recorded");
+                }
+                else
+                {
+                    NotificationService.Notify(NotificationSeverity.Error, $"Error", $"You have already voted for this idea!");
+                }
+
             }
             catch (System.Exception innovateDbCreateIdeaException)
             {

@@ -209,3 +209,4 @@ C:\Users\cwolfsandle\source\repos\InnovationWebApp\InnovateWebRadzen\server\obj\
 C:\Users\cwolfsandle\source\repos\InnovationWebApp\InnovateWebRadzen\server\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
 C:\Users\cwolfsandle\source\repos\InnovationWebApp\InnovateWebRadzen\server\obj\Debug\netcoreapp3.1\Razor\Pages\Login.cshtml.g.cs
 C:\Users\cwolfsandle\source\repos\InnovationWebApp\InnovateWebRadzen\server\obj\Debug\netcoreapp3.1\Razor\Pages\Logout.cshtml.g.cs
+C:\Users\cwolfsandle\source\repos\InnovationWebApp\InnovateWebRadzen\server\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\InnovationPlatform - Web Deploy\profile.arm.json

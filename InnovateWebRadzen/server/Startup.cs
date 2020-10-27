@@ -91,7 +91,7 @@ namespace InnovationWebApp
             .AddOpenIdConnect("Auth0", options =>
             {
                 // Set the authority to your Auth0 domain
-                options.Authority = $"https://{Configuration["Auth0:Domain"]}";
+                options.Authority = $"https://{Configuration["Auth0:Domain"]}"+"/userinfo";
 
                 // Configure the Auth0 Client ID and Client Secret
                 options.ClientId = Configuration["Auth0:ClientId"];
@@ -103,10 +103,12 @@ namespace InnovationWebApp
                 // Configure the scope
                 options.Scope.Clear();
                 options.Scope.Add("openid");
+                options.Scope.Add("profile");
+                options.Scope.Add("email");
 
                 // Set the callback path, so Auth0 will call back to http://localhost:3000/callback
                 // Also ensure that you have added the URL as an Allowed Callback URL in your Auth0 dashboard
-                 options.CallbackPath = new PathString("/callback");
+                options.CallbackPath = new PathString("/callback");
 
                 // Configure the Claims Issuer to be Auth0
                 options.ClaimsIssuer = "Auth0";
